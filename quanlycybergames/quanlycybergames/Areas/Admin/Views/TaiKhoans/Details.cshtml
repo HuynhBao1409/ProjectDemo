@@ -1,0 +1,51 @@
+﻿@model quanlycybergames.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TaiKhoan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenThanhVien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenThanhVien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenDN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matkhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matkhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiTaiKhoan.TenLoaiTK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiTaiKhoan.TenLoaiTK)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_ThanhVien }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
