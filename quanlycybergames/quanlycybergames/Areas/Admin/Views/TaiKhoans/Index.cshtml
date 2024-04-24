@@ -13,11 +13,8 @@
     <script>let table = new DataTable('#myTable');</script>
 }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-div class="wrapper">
-<!-- Main Sidebar Container -->
+<div class="wrapper">
+<!-- Main Sidebar Container --> 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Main content -->
@@ -42,6 +39,7 @@ div class="wrapper">
                 <table class="table table-bordered  table-striped" id="myTable">
                     <thead>
                         <tr>
+
                             <th>@Html.DisplayNameFor(model => model.TenThanhVien)</th>
                             <th>@Html.DisplayNameFor(model => model.TenDN)</th>
                             <th>@Html.DisplayNameFor(model => model.Matkhau)</th>
