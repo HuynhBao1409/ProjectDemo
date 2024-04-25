@@ -1,58 +1,85 @@
 ﻿@model quanlycybergams.Models.May
 
 @{
-    Layout = null;
+    ViewBag.Title = "Chi tiết Máy";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<!DOCTYPE html>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>May</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.TenMay)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.TenMay)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.TinhTrangMay)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.TinhTrangMay)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.HoatDong)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.HoatDong)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.DonGia.ID_gia)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.DonGia.ID_gia)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_May }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+    <!-- Main content -->
+    <section class="content my-2">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong class="text-danger">CHI TIẾT MÁY</strong>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <a href="@Url.Action("Edit", "Mays", new { id = Model.ID_May })" class="btn-sm btn-success"> <i class="fa fa-edit"> Sửa</i></a>
+                        <a href="@Url.Action("Index", "Mays")" class="btn-sm btn-info"> <i class="fa fa-long-arrow-alt-left"></i> Quay lại</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TenMay)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TinhTrangMay)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.HoatDong)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DonGia.ID_gia)
+                            </th>
+                            
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model => model.TenMay)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.TinhTrangMay)
+                            </td>
+
+                            <td>
+                                @{
+                                    if (Model.HoatDong.HasValue)
+                                    {
+                                        if (Model.HoatDong.Value)
+                                        {
+                                            <span>Hoạt động</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Không Hoạt động</span>
+                                        }
+                                    }
+                                }
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.DonGia.ID_gia)
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <!-- /.card -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

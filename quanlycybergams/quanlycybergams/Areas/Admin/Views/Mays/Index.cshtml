@@ -1,59 +1,100 @@
 ﻿@model IEnumerable<quanlycybergams.Models.May>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Máy";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<!DOCTYPE html>
+@section header{
+    <link href="~/Public/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+@section footer{
+    <script src="~/Public/js/jquery.dataTables.min.js"></script>
+    <script>let table = new DataTable('#myTable');</script>
+}
+<div class="wrapper">
+    <!-- Main Sidebar Container -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenMay)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TinhTrangMay)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HoatDong)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DonGia.ID_gia)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenMay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TinhTrangMay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoatDong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DonGia.ID_gia)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID_May }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID_May }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID_May })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
-</html>
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong class="text-danger">DANH MỤC MÁY</strong>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a href="@Url.Action("Create", "Mays")" class="btn-sm btn-success"><i class="fa fa-plus"> Tạo máy</i></a>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                        <table class="table table-bordered  table-striped" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TenMay)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TinhTrangMay)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.HoatDong)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DonGia.ID_gia)
+                                    </th>
+                                    <th>Chức năng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TenMay)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TinhTrangMay)
+                                        </td>
+                                        <td>
+                                            @{
+                                                if (item.HoatDong.HasValue)
+                                                {
+                                                    if (item.HoatDong.Value)
+                                                    {
+                                                        <span>Hoạt động</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>Không hoạt động</span>
+                                                    }
+                                                }
+                                            }
+    <td>
+                                            @Html.DisplayFor(modelItem => item.DonGia.ID_gia)
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Edit", "Mays", new { id = item.ID_May })" class="btn-sm btn-primary"><i class="fa fa-edit"></i></a>
+                                            <a href="@Url.Action("Details", "Mays", new { id = item.ID_May })" class="btn-sm btn-info"><i class="fa fa-eye"></i></a>
+                                            <a href="@Url.Action("Delete", "Mays", new { id = item.ID_May })" class="btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+
+                        </table>
+
+                </div> <!-- /.card-footer-->
+            </div><!-- /.card -->
+        </section><!-- /.content -->
+    </div> <!-- /.content-wrapper -->
+</div><!-- ./wrapper -->
