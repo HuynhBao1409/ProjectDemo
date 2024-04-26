@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DichVusController.cs" />
     <Compile Include="Areas\Admin\Controllers\DonGiasController.cs" />
     <Compile Include="Areas\Admin\Controllers\DonHangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\MaysController.cs" />
@@ -2810,6 +2811,11 @@
     <Content Include="Areas\Admin\Views\DonHangs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DonHangs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DonHangs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVus\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVus\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVus\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVus\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVus\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
