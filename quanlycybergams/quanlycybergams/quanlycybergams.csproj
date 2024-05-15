@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.5.4.4\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.5.4.4\build\Microsoft.TypeScript.MSBuild.props')" />
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -131,14 +132,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChiTietDonHangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DichVusController.cs" />
-    <Compile Include="Areas\Admin\Controllers\DonGiasController.cs" />
+<<<<<<< HEAD
     <Compile Include="Areas\Admin\Controllers\DonHangsController.cs" />
+=======
+>>>>>>> 58896a978fbc5910d88e4176419133ab5d25ef10
+    <Compile Include="Areas\Admin\Controllers\KhosController.cs" />
     <Compile Include="Areas\Admin\Controllers\MaysController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoansController.cs" />
     <Compile Include="Controllers\TrangchuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietDonHang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DichVu.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -146,12 +154,12 @@
     <Compile Include="Models\DonGia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HoaDon.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+>>>>>>> 58896a978fbc5910d88e4176419133ab5d25ef10
     <Compile Include="Models\Kho.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -174,9 +182,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\TaiKhoan.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ThanhToanDV.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -211,9 +216,18 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Public\admin\css\icons\tabler-icons\fonts\tabler-icons.svg" />
+    <Content Include="Public\admin\css\icons\tabler-icons\tabler-icons.css" />
+    <Content Include="Public\admin\css\styles.css" />
+    <Content Include="Public\admin\css\stylesadmin.css" />
+    <Content Include="Public\admin\pc\cancel.png" />
+    <Content Include="Public\admin\pc\fix.png" />
+    <Content Include="Public\admin\pc\off.jfif" />
+    <Content Include="Public\admin\pc\on.png" />
     <Content Include="Public\css\jquery.dataTables.min.css" />
     <Content Include="Public\css\main.css" />
     <Content Include="Public\css\style.css" />
+    <Content Include="Public\css\styletc.css" />
     <Content Include="Public\dist\css\adminlte.css" />
     <Content Include="Public\dist\css\adminlte.min.css" />
     <Content Include="Public\dist\css\alt\adminlte.components.css" />
@@ -265,178 +279,10 @@
     <Content Include="Public\dist\js\pages\dashboard.js" />
     <Content Include="Public\dist\js\pages\dashboard2.js" />
     <Content Include="Public\dist\js\pages\dashboard3.js" />
-    <Content Include="Public\img\blog\add.jpg" />
-    <Content Include="Public\img\blog\author.png" />
-    <Content Include="Public\img\blog\blog1.png" />
-    <Content Include="Public\img\blog\blog2.png" />
-    <Content Include="Public\img\blog\blog3.png" />
-    <Content Include="Public\img\blog\c1.jpg" />
-    <Content Include="Public\img\blog\c2.jpg" />
-    <Content Include="Public\img\blog\c3.jpg" />
-    <Content Include="Public\img\blog\c4.jpg" />
-    <Content Include="Public\img\blog\c5.jpg" />
-    <Content Include="Public\img\blog\c6.jpg" />
-    <Content Include="Public\img\blog\cat-post\cat-post-1.jpg" />
-    <Content Include="Public\img\blog\cat-post\cat-post-2.jpg" />
-    <Content Include="Public\img\blog\cat-post\cat-post-3.jpg" />
-    <Content Include="Public\img\blog\causes\causes-1.jpg" />
-    <Content Include="Public\img\blog\causes\causes-2.jpg" />
-    <Content Include="Public\img\blog\causes\causes-3.jpg" />
-    <Content Include="Public\img\blog\feature-img1.jpg" />
-    <Content Include="Public\img\blog\latest-post\l-post-1.jpg" />
-    <Content Include="Public\img\blog\latest-post\l-post-2.jpg" />
-    <Content Include="Public\img\blog\latest-post\l-post-3.jpg" />
-    <Content Include="Public\img\blog\latest-post\l-post-4.jpg" />
-    <Content Include="Public\img\blog\main-blog\m-blog-1.jpg" />
-    <Content Include="Public\img\blog\main-blog\m-blog-2.jpg" />
-    <Content Include="Public\img\blog\main-blog\m-blog-3.jpg" />
-    <Content Include="Public\img\blog\main-blog\m-blog-4.jpg" />
-    <Content Include="Public\img\blog\main-blog\m-blog-5.jpg" />
-    <Content Include="Public\img\blog\next.jpg" />
-    <Content Include="Public\img\blog\popular-post\post1.jpg" />
-    <Content Include="Public\img\blog\popular-post\post2.jpg" />
-    <Content Include="Public\img\blog\popular-post\post3.jpg" />
-    <Content Include="Public\img\blog\popular-post\post4.jpg" />
-    <Content Include="Public\img\blog\post-img1.jpg" />
-    <Content Include="Public\img\blog\post-img2.jpg" />
-    <Content Include="Public\img\blog\prev.jpg" />
-    <Content Include="Public\img\card.jpg" />
-    <Content Include="Public\img\cart.jpg" />
-    <Content Include="Public\img\cart\cart1.png" />
-    <Content Include="Public\img\cart\cart2.png" />
-    <Content Include="Public\img\cart\cart3.png" />
-    <Content Include="Public\img\category\c1.jpg" />
-    <Content Include="Public\img\category\c2.jpg" />
-    <Content Include="Public\img\category\c3.jpg" />
-    <Content Include="Public\img\category\c4.jpg" />
-    <Content Include="Public\img\category\c5.jpg" />
-    <Content Include="Public\img\category\s-p1.jpg" />
-    <Content Include="Public\img\Fevicon.png" />
-    <Content Include="Public\img\gallery\logo.png" />
-    <Content Include="Public\img\gallery\r1.jpg" />
-    <Content Include="Public\img\gallery\r2.jpg" />
-    <Content Include="Public\img\gallery\r3.jpg" />
-    <Content Include="Public\img\gallery\r5.jpg" />
-    <Content Include="Public\img\gallery\r7.jpg" />
-    <Content Include="Public\img\gallery\r8.jpg" />
-    <Content Include="Public\img\home\hero-banner.png" />
-    <Content Include="Public\img\home\hero-slide1.png" />
-    <Content Include="Public\img\home\hero-slide2.png" />
-    <Content Include="Public\img\home\hero-slide3.png" />
-    <Content Include="Public\img\home\parallax-bg.png" />
-    <Content Include="Public\img\images.jpg" />
-    <Content Include="Public\img\instagram\Image-01.jpg" />
-    <Content Include="Public\img\instagram\Image-02.jpg" />
-    <Content Include="Public\img\instagram\Image-03.jpg" />
-    <Content Include="Public\img\instagram\Image-04.jpg" />
-    <Content Include="Public\img\instagram\Image-05.jpg" />
-    <Content Include="Public\img\instagram\Image-06.jpg" />
-    <Content Include="Public\img\instagram\Image-07.jpg" />
-    <Content Include="Public\img\instagram\Image-08.jpg" />
-    <Content Include="Public\img\instagram\ins-1.jpg" />
-    <Content Include="Public\img\instagram\ins-2.jpg" />
-    <Content Include="Public\img\instagram\ins-3.jpg" />
-    <Content Include="Public\img\instagram\ins-4.jpg" />
-    <Content Include="Public\img\instagram\ins-5.jpg" />
-    <Content Include="Public\img\instagram\ins-6.jpg" />
-    <Content Include="Public\img\login.jpg" />
+    <Content Include="Public\img\anh\sting.jfif" />
+    <Content Include="Public\img\bg.png" />
     <Content Include="Public\img\logo.png" />
-    <Content Include="Public\img\page\b0.jpg" />
-    <Content Include="Public\img\page\ba3.png" />
-    <Content Include="Public\img\page\gioi-thieu-cua-hang0.png" />
-    <Content Include="Public\img\page\q0.png" />
-    <Content Include="Public\img\page\sd0.jpg" />
-    <Content Include="Public\img\page\tuyen-dung-0.jpg" />
-    <Content Include="Public\img\post\a0.png" />
-    <Content Include="Public\img\post\b0.png" />
-    <Content Include="Public\img\post\dien-dung1.jpg" />
-    <Content Include="Public\img\post\nghia-dep-trai-nhung-thua-di1.jpg" />
-    <Content Include="Public\img\post\tuyen-dung1.jpg" />
-    <Content Include="Public\img\product-sm-1.png" />
-    <Content Include="Public\img\product-sm-2.png" />
-    <Content Include="Public\img\product-sm-3.png" />
-    <Content Include="Public\img\product-sm-4.png" />
-    <Content Include="Public\img\product-sm-5.png" />
-    <Content Include="Public\img\product-sm-6.png" />
-    <Content Include="Public\img\product-sm-7.png" />
-    <Content Include="Public\img\product-sm-8.png" />
-    <Content Include="Public\img\product-sm-9.png" />
-    <Content Include="Public\img\product1.png" />
-    <Content Include="Public\img\product2.png" />
-    <Content Include="Public\img\product3.png" />
-    <Content Include="Public\img\product4.png" />
-    <Content Include="Public\img\product5.png" />
-    <Content Include="Public\img\product6.png" />
-    <Content Include="Public\img\product7.png" />
-    <Content Include="Public\img\product8.png" />
-    <Content Include="Public\img\product\ao-dai.jpg" />
-    <Content Include="Public\img\product\ao-so-mi.png" />
-    <Content Include="Public\img\product\ao-thun.png" />
-    <Content Include="Public\img\product\card.jpg" />
-    <Content Include="Public\img\product\dam.jpg" />
-    <Content Include="Public\img\product\dong-ho.png" />
-    <Content Include="Public\img\product\product-sm-1.png" />
-    <Content Include="Public\img\product\product-sm-2.png" />
-    <Content Include="Public\img\product\product-sm-3.png" />
-    <Content Include="Public\img\product\product-sm-4.png" />
-    <Content Include="Public\img\product\product-sm-5.png" />
-    <Content Include="Public\img\product\product-sm-6.png" />
-    <Content Include="Public\img\product\product-sm-7.png" />
-    <Content Include="Public\img\product\product-sm-8.png" />
-    <Content Include="Public\img\product\product-sm-9.png" />
-    <Content Include="Public\img\product\product1.png" />
-    <Content Include="Public\img\product\product2.png" />
-    <Content Include="Public\img\product\product3.png" />
-    <Content Include="Public\img\product\product4.png" />
-    <Content Include="Public\img\product\product5.png" />
-    <Content Include="Public\img\product\product6.png" />
-    <Content Include="Public\img\product\product7.png" />
-    <Content Include="Public\img\product\product8.png" />
-    <Content Include="Public\img\product\quan-ao.jpg" />
-    <Content Include="Public\img\product\review-1.png" />
-    <Content Include="Public\img\product\review-2.png" />
-    <Content Include="Public\img\product\review-3.png" />
-    <Content Include="Public\img\product\vay.jpg" />
-    <Content Include="Public\img\r1.jpg" />
-    <Content Include="Public\img\r10.jpg" />
-    <Content Include="Public\img\r11.jpg" />
-    <Content Include="Public\img\r12.jpg" />
-    <Content Include="Public\img\r2.jpg" />
-    <Content Include="Public\img\r3.jpg" />
-    <Content Include="Public\img\r4.jpg" />
-    <Content Include="Public\img\r5.jpg" />
-    <Content Include="Public\img\r6.jpg" />
-    <Content Include="Public\img\r7.jpg" />
-    <Content Include="Public\img\r8.jpg" />
-    <Content Include="Public\img\r9.jpg" />
-    <Content Include="Public\img\review-1.png" />
-    <Content Include="Public\img\review-2.png" />
-    <Content Include="Public\img\review-3.png" />
-    <Content Include="Public\img\slider\black-friday0.jpg" />
-    <Content Include="Public\img\slider\danh-muc0.jpg" />
-    <Content Include="Public\img\slider\dong-ho0.png" />
-    <Content Include="Public\img\slider\Image-01.jpg" />
-    <Content Include="Public\img\slider\Image-02.jpg" />
-    <Content Include="Public\img\slider\Image-03.jpg" />
-    <Content Include="Public\img\slider\Image-04.jpg" />
-    <Content Include="Public\img\slider\Image-05.jpg" />
-    <Content Include="Public\img\slider\Image-06.jpg" />
-    <Content Include="Public\img\slider\Image-07.jpg" />
-    <Content Include="Public\img\slider\Image-08.jpg" />
-    <Content Include="Public\img\slider\ins-1.jpg" />
-    <Content Include="Public\img\slider\ins-2.jpg" />
-    <Content Include="Public\img\slider\ins-3.jpg" />
-    <Content Include="Public\img\slider\ins-4.jpg" />
-    <Content Include="Public\img\slider\ins-5.jpg" />
-    <Content Include="Public\img\slider\ins-6.jpg" />
-    <Content Include="Public\img\slider\s0.jpg" />
-    <Content Include="Public\img\slider\slider--20.png" />
-    <Content Include="Public\img\slider\slider--30.png" />
-    <Content Include="Public\img\slider\slider--40.png" />
-    <Content Include="Public\img\slider\slider-10.png" />
-    <Content Include="Public\img\slider\slider-11.png" />
-    <Content Include="Public\img\supplier\cua-hang-may.png" />
-    <Content Include="Public\img\supplier\nha-phan-phoi.png" />
+    <Content Include="Public\img\user-1.jpg" />
     <Content Include="Public\js\jquery.dataTables.min.js" />
     <Content Include="Public\js\main.js" />
     <Content Include="Public\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
@@ -2675,9 +2521,6 @@
     <Content Include="Public\dist\js\.eslintrc.json" />
     <Content Include="Public\dist\js\adminlte.js.map" />
     <Content Include="Public\dist\js\adminlte.min.js.map" />
-    <Content Include="Public\img\blog\.DS_Store" />
-    <Content Include="Public\img\gallery\.DS_Store" />
-    <Content Include="Public\img\Thumbs.db" />
     <Content Include="Public\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="Public\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
     <Content Include="Public\plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js.map" />
@@ -2789,6 +2632,33 @@
     <Content Include="Areas\Admin\Views\TaiKhoans\Details.cshtml" />
     <Content Include="Areas\Admin\Views\TaiKhoans\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\TaiKhoans\Index.cshtml" />
+    <Content Include="Public\admin\css\icons\tabler-icons\fonts\tabler-icons.eot" />
+    <Content Include="Public\admin\css\icons\tabler-icons\fonts\tabler-icons.ttf" />
+    <Content Include="Public\admin\css\icons\tabler-icons\fonts\tabler-icons.woff" />
+    <Content Include="Public\admin\css\icons\tabler-icons\fonts\tabler-icons.woff2" />
+    <Content Include="Areas\Admin\Views\Khos\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Khos\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Khos\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Khos\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Khos\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVus\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVus\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVus\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVus\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVus\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Mays\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Mays\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Mays\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Mays\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Mays\Index.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Areas\Admin\Views\ChiTietDonHangs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHangs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHangs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHangs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHangs\Index.cshtml" />
+=======
+>>>>>>> 58896a978fbc5910d88e4176419133ab5d25ef10
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -2796,26 +2666,19 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\Mays\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Mays\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Mays\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Mays\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Mays\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\DonGias\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\DonGias\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\DonGias\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\DonGias\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\DonGias\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Areas\Admin\Views\DonHangs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DonHangs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\DonHangs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DonHangs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DonHangs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\DichVus\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\DichVus\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\DichVus\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\DichVus\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\DichVus\Index.cshtml" />
+=======
+    <Content Include="Areas\Admin\Views\ChiTietDonHangs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHangs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHangs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHangs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ChiTietDonHangs\Index.cshtml" />
+>>>>>>> 58896a978fbc5910d88e4176419133ab5d25ef10
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2872,6 +2735,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
@@ -2909,8 +2773,11 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.5.4.4\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.5.4.4\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.5.4.4\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.5.4.4\build\Microsoft.TypeScript.MSBuild.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.5.4.4\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.5.4.4\build\Microsoft.TypeScript.MSBuild.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

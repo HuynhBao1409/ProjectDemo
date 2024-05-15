@@ -12,13 +12,12 @@ namespace quanlycybergams.Areas.Admin.Controllers
 {
     public class MaysController : Controller
     {
-        private QuanLyCYBERGAMESEntities db = new QuanLyCYBERGAMESEntities();
+        private QuanLyCYBERGAMESEntities1 db = new QuanLyCYBERGAMESEntities1();
 
         // GET: Admin/Mays
         public ActionResult Index()
         {
-            var mays = db.Mays.Include(m => m.DonGia);
-            return View(mays.ToList());
+            return View(db.Mays.ToList());
         }
 
         // GET: Admin/Mays/Details/5
@@ -39,7 +38,6 @@ namespace quanlycybergams.Areas.Admin.Controllers
         // GET: Admin/Mays/Create
         public ActionResult Create()
         {
-            ViewBag.ID_gia = new SelectList(db.DonGias, "ID_gia", "ID_gia");
             return View();
         }
 
@@ -48,16 +46,18 @@ namespace quanlycybergams.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_May,TenMay,TinhTrangMay,ID_gia,HoatDong")] May may)
+        public ActionResult Create([Bind(Include = "ID_May,TenMay,GiaMay,HoatDong,ThoiGianMo,ThoiGianTat,TongTien")] May may)
         {
             if (ModelState.IsValid)
             {
+                TimeSpan thoiGianSuDung = (may.ThoiGianTat - may.ThoiGianMo) ?? TimeSpan.Zero;
+                decimal? tongTien = Convert.ToDecimal(thoiGianSuDung.TotalHours) * decimal.Parse(may.GiaMay);
+                may.TongTien = tongTien;
                 db.Mays.Add(may);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ID_gia = new SelectList(db.DonGias, "ID_gia", "ID_gia", may.ID_gia);
             return View(may);
         }
 
@@ -73,7 +73,6 @@ namespace quanlycybergams.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ID_gia = new SelectList(db.DonGias, "ID_gia", "ID_gia", may.ID_gia);
             return View(may);
         }
 
@@ -82,15 +81,17 @@ namespace quanlycybergams.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_May,TenMay,TinhTrangMay,ID_gia,HoatDong")] May may)
+        public ActionResult Edit([Bind(Include = "ID_May,TenMay,GiaMay,HoatDong,ThoiGianMo,ThoiGianTat,TongTien")] May may)
         {
             if (ModelState.IsValid)
             {
+                TimeSpan thoiGianSuDung = (may.ThoiGianTat - may.ThoiGianMo) ?? TimeSpan.Zero;
+                decimal? tongTien = Convert.ToDecimal(thoiGianSuDung.TotalHours) * decimal.Parse(may.GiaMay);
+                may.TongTien = tongTien;
                 db.Entry(may).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ID_gia = new SelectList(db.DonGias, "ID_gia", "ID_gia", may.ID_gia);
             return View(may);
         }
 

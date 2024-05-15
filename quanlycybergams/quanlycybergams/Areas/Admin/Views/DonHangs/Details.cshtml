@@ -1,78 +1,43 @@
 ﻿@model quanlycybergams.Models.DonHang
 
 @{
-    ViewBag.Title = "Chi tiết đơn hàng";
+    ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+<h2>Details</h2>
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div>
+    <h4>DonHang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ngayDatHang)
+        </dt>
 
-    <!-- Main content -->
-    <section class="content my-2">
+        <dd>
+            @Html.DisplayFor(model => model.ngayDatHang)
+        </dd>
 
-        <!-- Default box -->
-        <div class="card">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-md-6">
-                        <strong class="text-danger">CHI TIẾT ĐƠN HÀNG</strong>
-                    </div>
-                    <div class="col-md-6 text-right">
-                        <a href="@Url.Action("Edit", "DonHangs", new { id = Model.MaDH })" class="btn-sm btn-success"> <i class="fa fa-edit"> Sửa</i></a>
-                        <a href="@Url.Action("Index", "DonHangs")" class="btn-sm btn-info"> <i class="fa fa-long-arrow-alt-left"></i> Quay lại</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.tongGia)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ghiChu)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ngayDatHang)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.DichVu.TenDV)
-                            </th>
+        <dt>
+            @Html.DisplayNameFor(model => model.tongGia)
+        </dt>
 
-                            <th>
-                                @Html.DisplayNameFor(model => model.TaiKhoan.TenKhachHang)
-                            </th>
-                        </tr>
-                    </thead>
+        <dd>
+            @Html.DisplayFor(model => model.tongGia)
+        </dd>
 
-                    <tbody>
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(model => model.tongGia)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.ghiChu)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.ngayDatHang)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.DichVu.TenDV)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.TaiKhoan.TenKhachHang)
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- /.card-body -->
-            </div>
-        </div>
-        <!-- /.card -->
-    </section>
-    <!-- /.content -->
+        <dt>
+            @Html.DisplayNameFor(model => model.TaiKhoan.TenKhachHang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiKhoan.TenKhachHang)
+        </dd>
+
+    </dl>
 </div>
-<!-- /.content-wrapper -->
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

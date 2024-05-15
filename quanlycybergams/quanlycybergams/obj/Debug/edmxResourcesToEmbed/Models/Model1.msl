@@ -1,6 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+<<<<<<< HEAD
+  <EntityContainerMapping StorageEntityContainer="QuanLyCYBERGAMESModelStoreContainer" CdmEntityContainer="QuanLyCYBERGAMESEntities1">
+=======
   <EntityContainerMapping StorageEntityContainer="QuanLyCYBERGAMESModelStoreContainer" CdmEntityContainer="QuanLyCYBERGAMESEntities">
+>>>>>>> 58896a978fbc5910d88e4176419133ab5d25ef10
+    <EntitySetMapping Name="ChiTietDonHangs">
+      <EntityTypeMapping TypeName="QuanLyCYBERGAMESModel.ChiTietDonHang">
+        <MappingFragment StoreEntitySet="ChiTietDonHang">
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="ID_DV" ColumnName="ID_DV" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="tongGia" ColumnName="tongGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="DichVus">
       <EntityTypeMapping TypeName="QuanLyCYBERGAMESModel.DichVu">
         <MappingFragment StoreEntitySet="DichVu">
@@ -24,25 +38,9 @@
       <EntityTypeMapping TypeName="QuanLyCYBERGAMESModel.DonHang">
         <MappingFragment StoreEntitySet="DonHang">
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
-          <ScalarProperty Name="ID_DV" ColumnName="ID_DV" />
-          <ScalarProperty Name="tongGia" ColumnName="tongGia" />
-          <ScalarProperty Name="ghiChu" ColumnName="ghiChu" />
           <ScalarProperty Name="ngayDatHang" ColumnName="ngayDatHang" />
           <ScalarProperty Name="ID_KhachHang" ColumnName="ID_KhachHang" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="HoaDons">
-      <EntityTypeMapping TypeName="QuanLyCYBERGAMESModel.HoaDon">
-        <MappingFragment StoreEntitySet="HoaDon">
-          <ScalarProperty Name="ID_HoaDon" ColumnName="ID_HoaDon" />
-          <ScalarProperty Name="ID_TTDV" ColumnName="ID_TTDV" />
-          <ScalarProperty Name="ID_May" ColumnName="ID_May" />
-          <ScalarProperty Name="ThoiGianMo" ColumnName="ThoiGianMo" />
-          <ScalarProperty Name="ThoiGianTat" ColumnName="ThoiGianTat" />
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-          <ScalarProperty Name="TinhTrangHD" ColumnName="TinhTrangHD" />
-          <ScalarProperty Name="ID_KhachHang" ColumnName="ID_KhachHang" />
+          <ScalarProperty Name="tongGia" ColumnName="tongGia" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -62,9 +60,11 @@
         <MappingFragment StoreEntitySet="May">
           <ScalarProperty Name="ID_May" ColumnName="ID_May" />
           <ScalarProperty Name="TenMay" ColumnName="TenMay" />
-          <ScalarProperty Name="TinhTrangMay" ColumnName="TinhTrangMay" />
-          <ScalarProperty Name="ID_gia" ColumnName="ID_gia" />
+          <ScalarProperty Name="GiaMay" ColumnName="GiaMay" />
           <ScalarProperty Name="HoatDong" ColumnName="HoatDong" />
+          <ScalarProperty Name="ThoiGianMo" ColumnName="ThoiGianMo" />
+          <ScalarProperty Name="ThoiGianTat" ColumnName="ThoiGianTat" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -80,14 +80,6 @@
           <ScalarProperty Name="TenDN" ColumnName="TenDN" />
           <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
           <ScalarProperty Name="GiaMay" ColumnName="GiaMay" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ThanhToanDVs">
-      <EntityTypeMapping TypeName="QuanLyCYBERGAMESModel.ThanhToanDV">
-        <MappingFragment StoreEntitySet="ThanhToanDV">
-          <ScalarProperty Name="ID_TTDV" ColumnName="ID_TTDV" />
-          <ScalarProperty Name="ID_KhachHang" ColumnName="ID_KhachHang" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

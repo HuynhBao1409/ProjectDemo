@@ -12,12 +12,19 @@ namespace quanlycybergams.Areas.Admin.Controllers
 {
     public class TaiKhoansController : Controller
     {
-        private QuanLyCYBERGAMESEntities db = new QuanLyCYBERGAMESEntities();
+        private QuanLyCYBERGAMESEntities1 db = new QuanLyCYBERGAMESEntities1();
 
         // GET: Admin/TaiKhoans
-        public ActionResult Index()
+        public ActionResult Index(string searchName)
         {
-            return View(db.TaiKhoans.ToList());
+            var taiKhoans = db.TaiKhoans.ToList();
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                taiKhoans = taiKhoans.Where(t => t.TenKhachHang.Contains(searchName)).ToList();
+            }
+
+            return View(taiKhoans);
         }
 
         // GET: Admin/TaiKhoans/Details/5
