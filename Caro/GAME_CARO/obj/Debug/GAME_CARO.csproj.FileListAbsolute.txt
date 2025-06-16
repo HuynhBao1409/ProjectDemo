@@ -28,3 +28,13 @@ D:\Project_AnhBeo\Project_Demo\HuynhGiaBao_63130087_Caro\GAME_CARO\obj\Debug\GAM
 D:\Project_AnhBeo\Project_Demo\HuynhGiaBao_63130087_Caro\GAME_CARO\obj\Debug\GAME_CARO.csproj.CoreCompileInputs.cache
 D:\Project_AnhBeo\Project_Demo\HuynhGiaBao_63130087_Caro\GAME_CARO\obj\Debug\GAME_CARO.exe
 D:\Project_AnhBeo\Project_Demo\HuynhGiaBao_63130087_Caro\GAME_CARO\obj\Debug\GAME_CARO.pdb
+D:\Project_AnhBeo\ProjectDemo\Caro\GAME_CARO\bin\Debug\GAME_CARO.exe.config
+D:\Project_AnhBeo\ProjectDemo\Caro\GAME_CARO\bin\Debug\GAME_CARO.exe
+D:\Project_AnhBeo\ProjectDemo\Caro\GAME_CARO\bin\Debug\GAME_CARO.pdb
+D:\Project_AnhBeo\ProjectDemo\Caro\GAME_CARO\obj\Debug\GAME_CARO.csproj.AssemblyReference.cache
+D:\Project_AnhBeo\ProjectDemo\Caro\GAME_CARO\obj\Debug\GAME_CARO.frMain.resources
+D:\Project_AnhBeo\ProjectDemo\Caro\GAME_CARO\obj\Debug\GAME_CARO.Properties.Resources.resources
+D:\Project_AnhBeo\ProjectDemo\Caro\GAME_CARO\obj\Debug\GAME_CARO.csproj.GenerateResource.cache
+D:\Project_AnhBeo\ProjectDemo\Caro\GAME_CARO\obj\Debug\GAME_CARO.csproj.CoreCompileInputs.cache
+D:\Project_AnhBeo\ProjectDemo\Caro\GAME_CARO\obj\Debug\GAME_CARO.exe
+D:\Project_AnhBeo\ProjectDemo\Caro\GAME_CARO\obj\Debug\GAME_CARO.pdb
